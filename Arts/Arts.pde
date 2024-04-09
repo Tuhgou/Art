@@ -1,4 +1,5 @@
 int s;
+int r, g, b, a;
 
 void setup() {
   //fullScreen();
@@ -16,10 +17,10 @@ void draw() {
     if (key == 'p') {
       s--;
     }
-  }if (s<-1){s=1;}
+  }if (s<0){s=0;}
 println(s);
   if (mousePressed == true) {
-    fill(0);
+    fill(r,g,b,a);
     ellipse(mouseX, mouseY, s, s);
   } else {
   }
