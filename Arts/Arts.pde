@@ -13,7 +13,7 @@ void draw() {
     }
   } 
   if (keyPressed) {
-    if (key == 'å') {
+    if (key == 'p') {
       s--;
     }
   }if (s<-1){s=1;}
