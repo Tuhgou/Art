@@ -6,6 +6,11 @@ void setup() {
   size(400,400);
   noStroke();
   background(255);
+  r=0;
+  g=0;
+  b=0;
+  a=2;
+  frameRate(300);
 }
 void draw() {
   if (keyPressed) {
