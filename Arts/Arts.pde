@@ -1,16 +1,38 @@
 int s;
 int r, g, b, a;
 
+Button[] bArray;
+
 void setup() {
   //fullScreen();
-  size(400,400);
+  size(800,800);
+  
+  bArray = new Button[16];
+  
+  color[] arr = new color[16];
+  arr[0] = color(0,255,0);
+  arr[1] = color(255,0,0);
+  arr[2] = color(0,0,255);
+  arr[3] = color(0,255,0);
+  
+  for (int i = 0; i < 16; i++){
+    if (i < 8){
+      bArray[i] = new Button(arr[0], new PVector(200+40*i, 20));
+    } else {
+      bArray[i] = new Button(arr[0], new PVector(200+40*(i-8), 60));
+    }
+  }
+  
+  
+  
   noStroke();
   background(255);
-  r=0;
-  g=0;
-  b=0;
-  a=2;
-  frameRate(300);
+  fill(200);
+  rect(0,0,800,125);
+  for (int i = 0; i < 16; i++){
+    bArray[i].render();
+  }
+  
 }
 void draw() {
   if (keyPressed) {
