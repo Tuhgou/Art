@@ -1,0 +1,31 @@
+class Button {
+ color c;
+ PVector pos;
+ PVector size = new PVector(30,30);
+ 
+ //construkter
+ Button(color setC, PVector setPos){
+   c = setC;
+   pos = setPos;
+ }
+ 
+ void render(){
+   fill(c);
+  rect(pos.x, pos.y , size.x, size.y);
+ }
+ 
+ color click(){
+   return c; 
+ }
+ 
+ boolean collison(int x, int y){
+  //return code true if collison
+   
+   return false; 
+ }
+ 
+ 
+  
+  
+  
+}
