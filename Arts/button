@@ -20,6 +20,12 @@ class Button {
  
  boolean collison(int x, int y){
   //return code true if collison
+   if (x > pos.x && x < pos.x+size.x){
+     if (y > pos.y && y < pos.y+size.y){
+       return true;
+     }
+   }
+   
    
    return false; 
  }
