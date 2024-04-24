@@ -6,7 +6,10 @@ Button[] bArray;
 void setup() {
   //fullScreen();
   size(800,800);
-  
+  r=0;
+  g=0;
+  b=0;
+  a=255;
   bArray = new Button[16];
   
   color[] arr = new color[16];
@@ -17,9 +20,9 @@ void setup() {
   
   for (int i = 0; i < 16; i++){
     if (i < 8){
-      bArray[i] = new Button(arr[0], new PVector(200+40*i, 20));
+      bArray[i] = new Button(arr[i], new PVector(200+40*i, 20));
     } else {
-      bArray[i] = new Button(arr[0], new PVector(200+40*(i-8), 60));
+      bArray[i] = new Button(arr[i], new PVector(200+40*(i-8), 60));
     }
   }
   
@@ -27,8 +30,9 @@ void setup() {
   
   noStroke();
   background(255);
-  fill(200);
+      fill(200);
   rect(0,0,800,125);
+
   for (int i = 0; i < 16; i++){
     bArray[i].render();
   }
@@ -46,9 +50,29 @@ void draw() {
     }
   }if (s<0){s=0;}
 println(s);
-  if (mousePressed == true) {
+  if (mousePressed == true & (mouseY > 125)) {
     fill(r,g,b,a);
     ellipse(mouseX, mouseY, s, s);
   } else {
+  }
+  
+  fill(200);
+  rect(0,0,800,125);
+
+  for (int i = 0; i < 16; i++){
+    bArray[i].render();
+  }
+
+}
+
+void mousePressed(){
+ for (int i = 0; i < 16; i++){
+    if(bArray[i].collison(mouseX, mouseY)){
+     color c = bArray[i].c;
+     
+       r=(int)red(c);
+      g=(int)green(c);
+       b=(int)blue(c);
+    }
   }
 }
