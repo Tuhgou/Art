@@ -3,7 +3,7 @@ class Button {
  PVector pos;
  PVector size = new PVector(30,30);
  
- //construkter
+
  Button(color setC, PVector setPos){
    c = setC;
    pos = setPos;
@@ -14,12 +14,8 @@ class Button {
   rect(pos.x, pos.y , size.x, size.y);
  }
  
- color click(){
-   return c; 
- }
- 
- boolean collison(int x, int y){
-  //return code true if collison
+
+ boolean collision(int x, int y){
    if (x > pos.x && x < pos.x+size.x){
      if (y > pos.y && y < pos.y+size.y){
        return true;
