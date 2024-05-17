@@ -1,34 +1,7 @@
-int s;
-int r, g, b, a;
+
 boolean showMenu = false;
 int menuX, menuY;
 
-void setup() {
-  size(400, 400);
-  noStroke();
-  background(255);
-}
-
-void draw() {
-  if (keyPressed) {
-    if (key == 'o') {
-      s++;
-    } else if (key == 'p') {
-      s--;
-    }
-  }
-  s = max(s, 0); // Ensure 's' does not go below 0
-  println(s);
-
-  if (mousePressed && mouseButton == LEFT) {
-    fill(r, g, b, a);
-    ellipse(mouseX, mouseY, s, s);
-  }
-
-  if (showMenu) {
-    drawPopupMenu(menuX, menuY);
-  }
-}
 
 void mouseClicked() {
   if (mouseButton == RIGHT) {
